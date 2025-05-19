@@ -1,0 +1,31 @@
+Add Consumer
+URL: POST http://localhost:8080/api/consumer
+{
+  "name": "Alice",
+  "address": "123 Park Lane",
+  "email": "alice@example.com"
+}
+
+Generate Bill
+URL: POST http://localhost:8080/api/bill?consumerId=1&units=300
+
+SQL--
+CREATE DATABASE electricity;
+
+USE electricity;
+
+CREATE TABLE consumer (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    address VARCHAR(255),
+    email VARCHAR(100)
+);
+
+CREATE TABLE billing (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    consumer_id INT,
+    units INT,
+    amount DECIMAL(10,2),
+    billing_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (consumer_id) REFERENCES consumer(id)
+);

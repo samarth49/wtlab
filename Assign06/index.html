@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electricity Bill Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background: #f5f5f5;
+      }
+      form {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #ccc;
+        max-width: 400px;
+        margin: auto;
+      }
+      label,
+      input {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      button {
+        padding: 0.5rem;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .result {
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="billForm">
+      <h2>Electricity Bill Calculator</h2>
+      <label>
+        Name:
+        <input type="text" id="name" required />
+      </label>
+      <label>
+        Email:
+        <input type="email" id="email" required />
+      </label>
+      <label>
+        Units Consumed:
+        <input type="number" id="units" required />
+      </label>
+      <button type="submit">Calculate Bill</button>
+      <div class="result" id="result"></div>
+    </form>
+
+    <script>
+      document
+        .getElementById("billForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const units = document.getElementById("units").value;
+
+          fetch(
+            "http://localhost/CodeWithHarry/Assign06/api/bill_generate.php",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ name, email, units }),
+            }
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.amount !== undefined) {
+                document.getElementById(
+                  "result"
+                ).innerText = `Bill Amount: ₹${data.amount}`;
+              } else {
+                document.getElementById("result").innerText =
+                  "Error: " + JSON.stringify(data);
+              }
+            })
+            .catch((error) => {
+              document.getElementById("result").innerText = "Error: " + error;
+            });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+CREATE TABLE items (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    description VARCHAR(255),
+    price DECIMAL(5, 2)
+);
+
+CREATE TABLE consumer (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(255)
+);

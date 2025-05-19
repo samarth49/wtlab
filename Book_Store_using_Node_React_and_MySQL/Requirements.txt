@@ -1,0 +1,22 @@
+http://localhost:4000/api/books
+
+SQL
+CREATE DATABASE IF NOT EXISTS book_store14;
+USE book_store14;
+
+CREATE TABLE IF NOT EXISTS books (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  description TEXT,
+  price DECIMAL(10, 2) NOT NULL
+);
+
+
+JSON input
+{
+  "title": "Test Book",
+  "author": "Tester",
+  "description": "Testing API",
+  "price": 99.99
+}

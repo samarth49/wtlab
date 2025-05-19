@@ -1,0 +1,38 @@
+GET Operation
+http://localhost:8080/api/results
+
+SQL Quries
+CREATE DATABASE vit_results;
+USE vit_results;
+
+CREATE TABLE student (
+    rollNo VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+CREATE TABLE mse (
+    rollNo VARCHAR(20) PRIMARY KEY,
+    ds DOUBLE,
+    os DOUBLE,
+    cn DOUBLE,
+    dbms DOUBLE,
+    CONSTRAINT fk_mse_student FOREIGN KEY (rollNo) REFERENCES student(rollNo)
+);
+
+CREATE TABLE ese (
+    rollNo VARCHAR(20) PRIMARY KEY,
+    ds DOUBLE,
+    os DOUBLE,
+    cn DOUBLE,
+    dbms DOUBLE,
+    CONSTRAINT fk_ese_student FOREIGN KEY (rollNo) REFERENCES student(rollNo)
+);
+
+INSERT INTO student (rollNo, name) 
+VALUES ('CSE12345', 'Pratik');
+
+INSERT INTO mse (rollNo, ds, os, cn, dbms)
+VALUES ('CSE12345', 24.0, 26.0, 22.0, 28.0);
+
+INSERT INTO ese (rollNo, ds, os, cn, dbms)
+VALUES ('CSE12345', 70.0, 68.0, 72.0, 65.0);

@@ -1,0 +1,409 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2d3e50;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #2d3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.catalogue-header {
+    background-color: #fff;
+    text-align: center;
+    padding: 3em 1em;
+    margin-bottom: 2em;
+}
+
+.catalogue-header h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.catalogue-header p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+.catalogue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 1em;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.catalogue .item {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+.catalogue .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.catalogue .item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.catalogue .item-info {
+    padding: 1.5em;
+}
+
+.catalogue .item-info h3 {
+    font-size: 1.6em;
+    margin: 0.5em 0;
+    color: #333;
+}
+
+.catalogue .item-info .description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.catalogue .item-info .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2d3e50;
+    margin-bottom: 1em;
+}
+
+.catalogue .item-info .add-to-cart {
+    background-color: #2d3e50;
+    color: #fff;
+    padding: 0.8em;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.catalogue .item-info .add-to-cart:hover {
+    background-color: #1d2a3b;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .catalogue .item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalogue .item {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalogue .item {
+        width: 100%;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+    border-radius: 5px;
+}
+
+/* Register form styling */
+.register-form {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.register-form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+.register-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.register-form button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+    border-radius: 5px;
+}
+
+/* Form styling */
+.login-form, .register-form {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2, .register-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form label, .register-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-form input, .register-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.login-form input:focus, .register-form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+.login-form button, .register-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover, .register-form button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}

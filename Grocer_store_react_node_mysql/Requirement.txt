@@ -1,0 +1,27 @@
+http://localhost:3000/api/items --> GET
+http://localhost:3000/api/login
+http://localhost:3000/api/register
+
+SQL
+CREATE DATABASE IF NOT EXISTS grocery_shop;
+USE grocery_shop;
+
+CREATE TABLE consumer (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255) UNIQUE,
+  password VARCHAR(255)
+);
+
+CREATE TABLE items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  price DECIMAL(10,2),
+  description TEXT
+);
+
+-- Sample items
+INSERT INTO items (name, price, description) VALUES
+("Apples", 120.00, "Fresh red apples"),
+("Milk", 50.00, "1 litre full cream milk"),
+("Bread", 40.00, "Brown bread loaf");

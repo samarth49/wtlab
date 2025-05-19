@@ -1,0 +1,44 @@
+JSON
+{
+  "name": "Parth Mahajan",
+  "roll_no": "23CS0123",
+  "mse1": 22,
+  "mse2": 18,
+  "mse3": 25,
+  "mse4": 20,
+  "ese1": 78,
+  "ese2": 80,
+  "ese3": 70,
+  "ese4": 75
+}
+
+SQL
+CREATE DATABASE IF NOT EXISTS student_marks;
+USE student_marks;
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    roll_no VARCHAR(20) NOT NULL UNIQUE
+);
+
+CREATE TABLE mse (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    subject1 INT NOT NULL,
+    subject2 INT NOT NULL,
+    subject3 INT NOT NULL,
+    subject4 INT NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE
+);
+
+CREATE TABLE ese (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    subject1 INT NOT NULL,
+    subject2 INT NOT NULL,
+    subject3 INT NOT NULL,
+    subject4 INT NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE
+);
+
