@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree Sorting & Searching</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>🌳 Binary Search Tree - Sort & Search</h2>
+
+        <div class="input-section">
+            <input type="number" id="valueInput" placeholder="Enter integer" />
+            <button onclick="insertNode()">Insert</button>
+            <input type="number" id="searchInput" placeholder="Search integer" />
+            <button onclick="searchNode()">Search</button>
+        </div>
+
+        <div class="output-section">
+            <h4>Inorder Traversal (Sorted Elements):</h4>
+            <div id="inorderDisplay" class="animated-box"></div>
+
+            <h4>Search Result:</h4>
+            <div id="searchResult" class="animated-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
