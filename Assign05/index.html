@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFS & DFS Graph Traversal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h2>🌐 Graph Traversal: BFS & DFS</h2>
+
+    <div class="section-row">
+      <input type="number" id="nodeInput" placeholder="Add Node Value" />
+      <button onclick="addNode()">Add Node</button>
+    </div>
+
+    <div class="section-row">
+      <input type="number" id="fromNode" placeholder="From Node" />
+      <input type="number" id="toNode" placeholder="To Node" />
+      <button onclick="addEdge()">Add Edge</button>
+    </div>
+
+    <div class="section-row">
+      <button onclick="traverseGraph()">Run BFS & DFS Traversal</button>
+    </div>
+
+    <div class="output">
+      <h4>Traversal Output:</h4>
+      <div id="outputBox"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

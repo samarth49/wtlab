@@ -1,0 +1,100 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #dbe6f6, #c5796d);
+  margin: 0;
+  padding: 20px;
+  color: #222;
+  animation: fadeInBody 1s ease-in;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+  background: #ffffffdd;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+.section-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input[type="number"] {
+  padding: 10px;
+  width: 130px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fffaf0;
+  transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #42a5f5;
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(66, 165, 245, 0.3);
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+.output {
+  margin-top: 20px;
+}
+
+#outputBox {
+  white-space: pre-line;
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a237e;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+  animation: fadeInBox 0.5s ease-in-out;
+}
+
+@keyframes fadeInBox {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+    background-color: #fff;
+  }
+  to {
+    opacity: 1;
+  }
+}
