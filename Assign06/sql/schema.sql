@@ -1,18 +1,18 @@
-create database electricity;
-use electricity;
+CREATE DATABASE IF NOT EXISTS electricity;
+USE electricity;
 
-create table consumer(
-    id int auto_increment primary key ,
-    name varchar(255),
-    address varchar(255),
-    phone varchar(20)
-)
+-- Create consumer table
+CREATE TABLE IF NOT EXISTS consumer (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
 
-create table billing(
-    id int auto_increment primary key,
-    consumer_id int unique not null,
-    units int ,
-    bill_amount decimal(10,2),
-    bill_date date,
-    foreign key(consumer_id) references consumer(id)
-)
+-- Create billing table
+CREATE TABLE IF NOT EXISTS billing (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    consumer_id INT NOT NULL,
+    units INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (consumer_id) REFERENCES consumer(id)
+);
